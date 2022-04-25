@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <script>
+            function formvalid() {
+                var name = 
+                    document.forms["RegForm"]["Name"];
+                var roll = 
+                    document.forms["RegForm"]["roll"];
+                var gen = 
+                    document.forms["RegForm"]["gen"];
+                var email = 
+                    document.forms["RegForm"]["EMail"];
+                var phone = 
+                    document.forms["RegForm"]["Telephone"];
+                var what = 
+                    document.forms["RegForm"]["Subject"];
+                var password = 
+                    document.forms["RegForm"]["Password"];
+                    var password2 = 
+                    document.forms["RegForm"]["Password2"];
+                var address = 
+                    document.forms["RegForm"]["Address"];
+  
+                if (name.value == "") {
+                    window.alert("Please enter your name.");
+                    name.focus();
+                    return false;
+                }
+
+                if (roll.value == "") {
+                    window.alert("Please enter your Roll No.");
+                    name.focus();
+                    return false;
+                }
+
+                
+                if (gen.value == "") {
+                    window.alert("Please select your Gender.");
+                    name.focus();
+                    return false;
+                }
+  
+                if (address.value == "") {
+                    window.alert("Please enter your address.");
+                    address.focus();
+                    return false;
+                }
+  
+                if (email.value == "") {
+                    window.alert(
+                      "Please enter a valid e-mail address.");
+                    email.focus();
+                    return false;
+                }
+  
+                if (phone.value == "") {
+                    window.alert(
+                      "Please enter your telephone number.");
+                    phone.focus();
+                    return false;
+                }
+  
+                if (password.value == "") {
+                    window.alert("Please enter your password");
+                    password.focus();
+                    return false;
+                }
+
+                if(password2.value == password.value){
+                   
+                    return true;
+                    
+                }
+                if(password2.value != password.value){
+                    window.alert("Please enter same password");
+                    password2.focus();
+                    return false;
+                    
+
+
+                }
+                if (what.selectedIndex < 1) {
+                    alert("Please select your course.");
+                    what.focus();
+                    return false;
+                }
+  
+                return true;
+            }
+        </script>
+  
+        <style>
+            div {
+                box-sizing: border-box;
+                width: 100%;
+                border: 100px solid black;
+                float: left;
+                align-content: center;
+                align-items: center;
+            }
+  
+            form {
+                margin: 0 auto;
+                width: 600px;
+            }
+        </style>
+    </head>
+  
+    <body>
+        <h1 style="text-align: center;">REGISTRATION FORM</h1>
+        <form name="RegForm" action="/submit.php" 
+              onsubmit="return formvalid()" method="post">
+            <p>Name:<br></Name:br> <input type="text" 
+                            size="65" name="Name" /></p>
+            <br>
+
+            <p>Roll No:<br></Name:br> <input type="text" 
+                size="65" name="roll" /></p>
+            <br>
+             
+            <p>Gender:<input type="radio" name="gen" value="Male">Male <input type="radio" name="gen" value="Female">Female</p>
+            <br>
+            <p>E-mail Address:
+                <br> <input type="text" 
+                            size="65" name="EMail" /></p>
+            <br />
+            <p>Phone No:
+                <br> <input type="text" 
+                        size="65" name="Telephone" /></p>
+            <br />
+            <p>Address:
+                <br> <input type="text" 
+                               size="65" name="Address" />
+          </p>
+            <br />
+            <p>Password:
+                <br> <input type="password" 
+                         size="65" name="Password" /></p>
+            <br />
+            <p>Conform Password: <br>
+
+                <input type="password" 
+                size="65" name="Password2" /></p>
+   <br />
+           
+  
+            <p>
+                SELECT YOUR COURSE
+                <select type="text" value="" name="Subject">
+                    <option>select</option>
+                    <option>BTECH</option>
+                    <option>BBA</option>
+                    <option>BCA</option>
+                    <option>B.COM</option>
+                </select>
+            </p>
+            <br />
+            <br />
+            
+            <p>
+              <center>  <input type="submit" 
+                       value="SUMBMIT" name="Submit" /></center>
+               
+            </p>
+        </form>
+    </body>
+</html>
